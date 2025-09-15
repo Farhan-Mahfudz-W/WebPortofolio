@@ -5,57 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio - Famazo</title>
 
-    <!-- Tailwind CSS & Font Awesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
 </head>
 <body class="bg-pattern">
 
-    <!-- Navigasi -->
     <nav class="fixed top-0 left-0 w-full z-50 bg-[#1A1A1A] bg-opacity-90 backdrop-blur-md shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-xl md:text-2xl font-bold text-indigo-500 hover:text-indigo-400 transition-colors">
                 Famazo
             </a>
             <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-white hover:text-indigo-400">About</a>
-                <a href="#skills" class="text-white hover:text-indigo-400">Skills</a>
-                <a href="#projects" class="text-white hover:text-indigo-400">Project</a>
-                <a href="#contact" class="text-white hover:text-indigo-400">Contact</a>
+                <a href="#about" class="text-white hover:text-indigo-400 transition-colors">About Me</a>
+                <a href="#skills" class="text-white hover:text-indigo-400 transition-colors">Skills</a>
+                <a href="#projects" class="text-white hover:text-indigo-400 transition-colors">Project</a>
+                <a href="#contact" class="text-white hover:text-indigo-400 transition-colors">Contact</a>
             </div>
             <button id="mobile-menu-btn" class="md:hidden text-white">
                 <i class="fa-solid fa-bars text-2xl"></i>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-[#1A1A1A] p-4">
-            <a href="#about" class="block py-2 text-white hover:text-indigo-400">About</a>
-            <a href="#skills" class="block py-2 text-white hover:text-indigo-400">Skills</a>
-            <a href="#projects" class="block py-2 text-white hover:text-indigo-400">Project</a>
-            <a href="#contact" class="block py-2 text-white hover:text-indigo-400">Contact</a>
+            <a href="#about" class="block py-2 text-white hover:text-indigo-400 transition-colors">About Me</a>
+            <a href="#skills" class="block py-2 text-white hover:text-indigo-400 transition-colors">Skills</a>
+            <a href="#projects" class="block py-2 text-white hover:text-indigo-400 transition-colors">Project</a>
+            <a href="#contact" class="block py-2 text-white hover:text-indigo-400 transition-colors">Contact</a>
         </div>
     </nav>
 
-    <!-- Bagian Home -->
     <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center p-6 pt-24">
         <div class="space-y-4 fade-in">
             <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white">
-                Hello, My Name is <span class="text-indigo-500">Farhan Mahfudz Wicaksono</span>.
+                Hi, My Name is <span class="text-indigo-500">Farhan Mahfudz Wicaksono</span>.
             </h1>
             <p id="typewriter-text" class="text-lg md:text-xl font-light text-gray-400 min-h-[28px]"></p>
-            <a href="#projects" class="inline-block px-8 py-3 mt-4 text-lg font-semibold text-white bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transform hover:scale-105 transition">
-                Lihat Proyek
+            <a href="#projects" class="inline-block px-8 py-3 mt-4 text-lg font-semibold text-white bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transform hover:scale-105 transition-all duration-300">
+                See Projects
             </a>
         </div>
     </section>
 
-    <!-- Tentang -->
     <section id="about" class="py-20 px-6 fade-in">
         <div class="container mx-auto max-w-4xl text-center space-y-8">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">About Me</h2>
-            <img class="w-40 h-40 rounded-full mx-auto shadow-lg border-4 border-indigo-500" src="assets/img/profile.jpg" alt="Foto Profil">
+            <img class="w-40 h-40 rounded-full mx-auto shadow-lg border-4 border-indigo-500 object-cover" src="assets/img/profile.jpg" alt="Foto Profil">
             <p class="text-lg text-gray-400 text-left mx-auto max-w-2xl">
                 As a technology enthusiast and an Information Technology graduate from Sultan Agung Islamic University, I am passionate about applying and developing my skills in the IT world. I am known for my adaptability, integrity, responsibility, and discipline, with a strong ability to work actively within a team.
                 <br><br>
@@ -74,12 +71,10 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="py-20 px-6 bg-[#1A1A1A] fade-in">
         <div class="container mx-auto max-w-4xl text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-10">Skills</h2>
             <div class="flex flex-wrap justify-center gap-6">
-                <!-- Core Skills -->
                 <div class="bg-gray-800 text-white p-4 rounded-lg shadow-lg flex flex-col items-center hover:bg-gray-700 transition">
                     <i class="fa-brands fa-html5 text-4xl text-orange-500 mb-2"></i>
                     <span>HTML5</span>
@@ -92,7 +87,6 @@
                     <i class="fa-brands fa-js text-4xl text-yellow-500 mb-2"></i>
                     <span>JavaScript</span>
                 </div>
-                <!-- Additional Skills based on your projects -->
                 <div class="bg-gray-800 text-white p-4 rounded-lg shadow-lg flex flex-col items-center hover:bg-gray-700 transition">
                     <i class="fa-brands fa-laravel text-4xl text-red-500 mb-2"></i>
                     <span>Laravel</span>
@@ -106,11 +100,11 @@
                     <span>Database</span>
                 </div>
                 <div class="bg-gray-800 text-white p-4 rounded-lg shadow-lg flex flex-col items-center hover:bg-gray-700 transition">
-                    <i class="fa-brands fa-tensorflow text-4xl text-orange-600 mb-2"></i>
+                    <i class="fa-brands fa-google text-4xl text-blue-400 mb-2"></i>
                     <span>TensorFlow</span>
                 </div>
                 <div class="bg-gray-800 text-white p-4 rounded-lg shadow-lg flex flex-col items-center hover:bg-gray-700 transition">
-                    <i class="fa-brands fa-python text-4xl text-blue-500 mb-2"></i>
+                    <i class="fa-solid fa-brain text-4xl text-pink-500 mb-2"></i>
                     <span>PyTorch</span>
                 </div>
                 <div class="bg-gray-800 text-white p-4 rounded-lg shadow-lg flex flex-col items-center hover:bg-gray-700 transition">
@@ -125,71 +119,65 @@
         </div>
     </section>
 
-    <!-- Proyek -->
     <section id="projects" class="py-20 px-6 fade-in">
         <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">Proyek Pilihan</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">My Project</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-[#1A1A1A] rounded-xl shadow-lg p-6 hover:scale-105 transition">
+                <div class="bg-[#1A1A1A] rounded-xl shadow-lg p-6 hover:scale-105 transition-all duration-300">
                     <img class="w-full h-48 object-cover rounded-xl mb-4" src="assets/img/project1.png" alt="Bald Detection App">
                     <h3 class="text-2xl font-bold text-white mb-2">Mobile Apps Bald Detection</h3>
                     <p class="text-gray-400 mb-4">This project is part of machine learning which is the final result for my machine learning stage using flutter as the foundation.</p>
                     <div class="flex space-x-4">
-                        <a href="https://github.com/Farhan-Mahfudz-W/apkbalddetect" target="_blank" class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600">GitHub</a>
+                        <a href="https://github.com/Farhan-Mahfudz-W/apkbalddetect" target="_blank" class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors">GitHub</a>
                     </div>
                 </div>
-                <div class="bg-[#1A1A1A] rounded-xl shadow-lg p-6 hover:scale-105 transition">
+                <div class="bg-[#1A1A1A] rounded-xl shadow-lg p-6 hover:scale-105 transition-all duration-300">
                     <img class="w-full h-48 object-cover rounded-xl mb-4" src="assets/img/project2.png" alt="Machine Learning Bald Detection">
                     <h3 class="text-2xl font-bold text-white mb-2">Jupyer Notebook Bald Detection</h3>
                     <p class="text-gray-400 mb-4">Machine Learning that is useful for Hair Line detection in the form of Tensorflow.</p>
                     <div class="flex space-x-4">
-                        <a href="https://github.com/Farhan-Mahfudz-W/HairLineModel" target="_blank" class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600">GitHub</a>
+                        <a href="https://github.com/Farhan-Mahfudz-W/HairLineModel" target="_blank" class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors">GitHub</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Kontak -->
     <section id="contact" class="py-20 px-6 bg-[#1A1A1A] fade-in">
         <div class="container mx-auto max-w-2xl text-center space-y-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white">Contact Me</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Contact</h2>
             <div class="flex justify-center space-x-6 text-3xl">
-                <a href="https://www.linkedin.com/in/farhan-mahfudz-wicaksono-68bb1b165" class="text-gray-400 hover:text-indigo-500"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/Farhan-Mahfudz-W" class="text-gray-400 hover:text-indigo-500"><i class="fa-brands fa-github"></i></a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=farhanmahfudz02@gmail.com" class="text-gray-400 hover:text-indigo-500"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/farhan-mahfudz-wicaksono-68bb1b165" target="_blank" class="text-gray-400 hover:text-indigo-500 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Farhan-Mahfudz-W" target="_blank" class="text-gray-400 hover:text-indigo-500 transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=farhanmahfudz02@gmail.com" target="_blank" class="text-gray-400 hover:text-indigo-500 transition-colors"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-[#1A1A1A] text-gray-400 py-6 text-center text-sm border-t border-gray-700">
-        <p>&copy; 2025 Famazo. Dibuat dengan AI.</p>
+        <p>&copy; 2025 Famazo. Made with AI.</p>
     </footer>
 
-    <!-- Chatbot -->
     <div class="chatbot-container">
         <div id="chatbot-bubble" class="chatbot-bubble">💬</div>
         <div id="chatbot-window" class="chatbot-window">
-            <div class="bg-indigo-600 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold">Chat with my Bots &hearts;</h3>
+            <div class="bg-indigo-600 text-white p-4 flex justify-between items-center rounded-t-xl">
+                <h3 class="font-bold">Chat with Zo Bot</h3>
                 <button id="close-chatbot" class="text-white">&times;</button>
             </div>
-            <div class="flex-grow p-4 overflow-y-auto">
-                <div class="flex justify-start mb-4">
-                    <div class="bg-gray-800 text-gray-200 p-3 rounded-lg max-w-xs">
-                        <p>Hello! How can I help you?</p>
-                    </div>
+            <div id="chat-messages" class="flex-grow p-4 overflow-y-auto flex flex-col">
+                <div class="bot-message">
+                    <p>Hello! How can I help you?</p>
                 </div>
             </div>
             <div class="p-4 bg-gray-800 flex items-center">
-                <input type="text" placeholder="Ketik pesan..." class="flex-grow p-2 rounded-lg border border-gray-600 bg-gray-700 text-white mr-2">
-                <button class="bg-indigo-600 text-white p-2 rounded-lg hover:bg-indigo-700">Kirim</button>
+                <input id="chat-input" type="text" placeholder="Ketik pesan..." class="flex-grow p-2 rounded-lg border border-gray-600 bg-gray-700 text-white mr-2">
+                <button id="chat-send-btn" class="bg-indigo-600 text-white p-2 rounded-lg hover:bg-indigo-700">Send</button>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
