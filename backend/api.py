@@ -39,7 +39,7 @@ model.eval()
 
 # --- Response dictionary (must match intents in your dataset) ---
 responses = {
-    "about_me": "I am a passionate developer specializing in AI and web development.",
+    "about_me": "I am a passionate developer specializing in AI, Machine Learning and Web Development.",
     "skills": "My main skills are HTML5, CSS3, JavaScript, Laravel, Node.js, Database, TensorFlow, PyTorch, Firebase, and Jupyter Notebook.",
     "projects": "Some of my projects are Mobile Apps Bald Detection and Jupyter Notebook Bald Detection.",
     "experience": "I have worked as IT Support, AI Engineer, and Freelancer on multiple projects.",
