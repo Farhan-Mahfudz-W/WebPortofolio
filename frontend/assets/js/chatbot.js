@@ -6,6 +6,9 @@ export function setupChatbot() {
     const chatInput = document.getElementById("chat-input");
     const chatSendBtn = document.getElementById("chat-send-btn");
 
+    // ✅ Ganti dengan URL backend kamu di Vercel
+    const API_URL = "https://chatbot-backend.vercel.app/api/predict";
+
     function displayMessage(sender, message, type) {
         const messageDiv = document.createElement("div");
         messageDiv.classList.add(type);
@@ -16,16 +19,20 @@ export function setupChatbot() {
 
     async function getBotResponse(input) {
         try {
-            const res = await fetch("http://127.0.0.1:8000/chat", {
+            const res = await fetch(API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ text: input })
             });
+
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+
             const data = await res.json();
-            displayMessage("Bot", data.response, "bot-message");
+            // asumsi backend balikan { reply: "...pesan..." }
+            displayMessage("Bot", data.reply, "bot-message");
         } catch (error) {
             console.error(error);
-            displayMessage("Bot", "Server error.", "bot-message");
+            displayMessage("Bot", "⚠️ Server error, coba lagi nanti.", "bot-message");
         }
     }
 

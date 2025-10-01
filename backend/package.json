@@ -1,0 +1,9 @@
+{
+  "name": "chatbot-portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "onnxruntime-node": "^1.20.0",
+    "@huggingface/tokenizers": "^0.15.0"
+  }
+}
