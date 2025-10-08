@@ -6,7 +6,7 @@ export function setupChatbot() {
     const chatInput = document.getElementById("chat-input");
     const chatSendBtn = document.getElementById("chat-send-btn");
 
-    // ✅ Ganti dengan URL backend kamu di Vercel
+    // ✅ Backend kamu di Hugging Face
     const API_URL = "https://famazo-chatbot.hf.space/chatbot";
 
     function displayMessage(sender, message, type) {
@@ -18,6 +18,7 @@ export function setupChatbot() {
     }
 
     async function getBotResponse(input) {
+        displayMessage("Bot", "⏳ Thinking...", "bot-message");
         try {
             const res = await fetch(API_URL, {
                 method: "POST",
@@ -28,10 +29,11 @@ export function setupChatbot() {
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
             const data = await res.json();
-            // asumsi backend balikan { reply: "...pesan..." }
-            displayMessage("Bot", data.reply, "bot-message");
+            chatMessages.lastChild.remove(); // hapus "Thinking..."
+            displayMessage("Bot", data.response, "bot-message");
         } catch (error) {
             console.error(error);
+            chatMessages.lastChild.remove();
             displayMessage("Bot", "⚠️ Server error, coba lagi nanti.", "bot-message");
         }
     }
