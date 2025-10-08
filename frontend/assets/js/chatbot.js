@@ -1,4 +1,5 @@
 export function setupChatbot() {
+    // === Elemen utama chatbot ===
     const chatbotBubble = document.getElementById("chatbot-bubble");
     const chatbotWindow = document.getElementById("chatbot-window");
     const closeChatbot = document.getElementById("close-chatbot");
@@ -6,9 +7,10 @@ export function setupChatbot() {
     const chatInput = document.getElementById("chat-input");
     const chatSendBtn = document.getElementById("chat-send-btn");
 
-    // ✅ Backend kamu di Hugging Face
+    // ✅ URL backend Hugging Face (ganti sesuai nama Space kamu)
     const API_URL = "https://famazo-chatbot.hf.space/chatbot";
 
+    // === Fungsi untuk menampilkan pesan ===
     function displayMessage(sender, message, type) {
         const messageDiv = document.createElement("div");
         messageDiv.classList.add(type);
@@ -17,8 +19,11 @@ export function setupChatbot() {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
+    // === Fungsi untuk memproses input user dan mendapatkan balasan dari backend ===
     async function getBotResponse(input) {
+        // tampilkan pesan "Thinking..." sementara menunggu respons
         displayMessage("Bot", "⏳ Thinking...", "bot-message");
+
         try {
             const res = await fetch(API_URL, {
                 method: "POST",
@@ -29,15 +34,21 @@ export function setupChatbot() {
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
             const data = await res.json();
-            chatMessages.lastChild.remove(); // hapus "Thinking..."
-            displayMessage("Bot", data.response, "bot-message");
+
+            // hapus pesan "Thinking..."
+            chatMessages.lastChild.remove();
+
+            // tampilkan jawaban dari backend (data.reply)
+            displayMessage("Bot", data.reply || "⚠️ No reply from server.", "bot-message");
+
         } catch (error) {
-            console.error(error);
+            console.error("Fetch error:", error);
             chatMessages.lastChild.remove();
             displayMessage("Bot", "⚠️ Server error, coba lagi nanti.", "bot-message");
         }
     }
 
+    // === Fungsi untuk mengirim pesan ===
     function handleSendMessage() {
         const message = chatInput.value.trim();
         if (message) {
@@ -47,6 +58,7 @@ export function setupChatbot() {
         }
     }
 
+    // === Event Listener ===
     chatSendBtn.addEventListener("click", handleSendMessage);
     chatInput.addEventListener("keypress", (e) => {
         if (e.key === "Enter") handleSendMessage();
