@@ -7,7 +7,7 @@ export function setupChatbot() {
     const chatSendBtn = document.getElementById("chat-send-btn");
 
     // ✅ Ganti dengan URL backend kamu di Vercel
-    const API_URL = "https://backend-eta-ashen-61.vercel.app/";
+    const API_URL = "https://famazo-chatbot.hf.space/chatbot";
 
     function displayMessage(sender, message, type) {
         const messageDiv = document.createElement("div");
